@@ -7,7 +7,6 @@ import PricesSection from './components/PricesSection'
 import './App.css'
 
 function App() {
-  
   return (
     <>
       <Navbar />
@@ -19,7 +18,7 @@ function App() {
         <ContactSection />
       </main>
       <footer>
-        <p>&copy; 2025 Aidar. All rights reserved.</p>
+        <p>&copy; 2025 Aidar Karim. Crafted with clarity and care.</p>
       </footer>
     </>
   )
