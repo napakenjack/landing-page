@@ -1,15 +1,15 @@
-import { Link, NavLink } from "react-router-dom";
-
 export default function Navbar() {
   return (
     <nav className="navbar">
-      <ul>
-        <li><a href="/" end activeclassname="active">Home</a></li>
-        <li><a href="/projects" activeclassname="active">Projects</a></li>
-        <li><a href="/self-introduction" activeclassname="active">Self-Introduction</a></li>
-        <li><a href="/prices" activeclassname="active">Prices</a></li>
-        <li><a href="/contact" activeclassname="active">Contact</a></li>
+      <div className="nav-brand">Aidar Karim</div>
+      <ul className="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#portfolio">Projects</a></li>
+        <li><a href="#selfintroduction">About</a></li>
+        <li><a href="#prices">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
+      <a className="nav-cta" href="mailto:hello@aidarkarim.dev">Let’s talk</a>
     </nav>
   );
 }
