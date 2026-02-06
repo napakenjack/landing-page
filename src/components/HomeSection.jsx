@@ -11,7 +11,7 @@ export default function HomeSection() {
   return (
     <section id="home" className="section hero">
       <div className="hero-content">
-        <p className="eyebrow">Product Designer • Frontend Engineer</p>
+        <p className="eyebrow">Product Designer • Frontend Engineer ・  Fullstack Developer</p>
         <h1>Hi, I’m Aidar. I craft delightful, high-converting digital experiences.</h1>
         <p className="lead">
           I help startups and growth teams turn complex ideas into fast, accessible, and
