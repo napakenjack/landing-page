@@ -1,50 +1,259 @@
+:root {
+  color: #0f172a;
+}
+
 #root {
-  max-width: 1280px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 0 1.5rem 4rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
 }
 
 html {
   scroll-behavior: smooth;
 }
-section {
-  padding: 4rem 0;
-  min-height: 70vh;
+
+.section {
+  padding: 3rem 0;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  background: rgba(248, 250, 252, 0.9);
+  backdrop-filter: blur(12px);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.nav-brand {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links a,
+.nav-links button {
+  color: #0f172a;
+  font-weight: 500;
+}
+
+.nav-links button {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+.nav-cta {
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  background: #0f172a;
+  color: #fff;
+  font-weight: 600;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  align-items: center;
+}
+
+.hero-content h1 {
+  font-size: clamp(2.4rem, 4vw, 3.4rem);
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+.lead {
+  font-size: 1.1rem;
+  color: #334155;
+  margin-bottom: 2rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+.primary-btn,
+.ghost-btn {
+  padding: 0.85rem 1.6rem;
+  border-radius: 0.9rem;
+  font-weight: 600;
+}
+
+.primary-btn {
+  background: #2563eb;
+  color: #fff;
+}
+
+.ghost-btn {
+  border: 1px solid #cbd5f5;
+  color: #1e293b;
+}
+
+.hero-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1.5rem;
+}
+
+.hero-metrics h3 {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.hero-card {
+  background: #0f172a;
+  color: #f8fafc;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.2);
+}
+
+.hero-card ul {
+  padding-left: 1.2rem;
+}
+
+.status-pill {
+  display: inline-block;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(248, 250, 252, 0.1);
+  margin-bottom: 1rem;
+}
+
+.section-header {
+  max-width: 640px;
+  margin-bottom: 2rem;
+}
+
+.section-header h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.grid.three {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 
 .card {
-  padding: 2em;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1.2rem;
+  padding: 1.6rem;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
 }
 
-.read-the-docs {
-  color: #888;
+.card.highlight {
+  border: 1px solid #c7d2fe;
+  background: #eef2ff;
+}
+
+.tag-row {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.tag {
+  background: #f1f5f9;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.skill-card {
+  background: #fff;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  border: 1px solid #e2e8f0;
+}
+
+.skill-card ul {
+  padding-left: 1.2rem;
+}
+
+.experience {
+  display: grid;
+  gap: 1rem;
+}
+
+.contact {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  align-items: center;
+}
+
+.contact-card {
+  background: #0f172a;
+  color: #f8fafc;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  display: grid;
+  gap: 1.2rem;
+}
+
+.contact-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 0 3rem;
+  color: #64748b;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+  }
 }

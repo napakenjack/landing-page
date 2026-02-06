@@ -1,15 +1,32 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 
 export default function Navbar() {
+  const location = useLocation()
+  const navigate = useNavigate()
+
+  const handleScroll = (sectionId) => () => {
+    if (location.pathname !== '/') {
+      navigate('/', { state: { scrollTo: sectionId } })
+      return
+    }
+
+    const target = document.getElementById(sectionId)
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
   return (
     <nav className="navbar">
-      <ul>
-        <li><a href="/" end activeclassname="active">Home</a></li>
-        <li><a href="/projects" activeclassname="active">Projects</a></li>
-        <li><a href="/self-introduction" activeclassname="active">Self-Introduction</a></li>
-        <li><a href="/prices" activeclassname="active">Prices</a></li>
-        <li><a href="/contact" activeclassname="active">Contact</a></li>
+      <Link className="nav-brand" to="/">Aidar</Link>
+      <ul className="nav-links">
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/projects">Projects</Link></li>
+        <li><button type="button" onClick={handleScroll('selfintroduction')}>About</button></li>
+        <li><button type="button" onClick={handleScroll('prices')}>Services</button></li>
+        <li><button type="button" onClick={handleScroll('contact')}>Contact</button></li>
       </ul>
+      <a className="nav-cta" href="mailto:napaxiong@gmail.com">Let’s talk</a>
     </nav>
   );
 }
