@@ -13,7 +13,7 @@ export default function ContactSection() {
           <h3>Start a conversation</h3>
           <p>Response time within 24 hours.</p>
         </div>
-        <a className="primary-btn" href="mailto:hello@aidarkarim.dev">hello@aidarkarim.dev</a>
+        <a className="primary-btn" href="mailto:napaxiong@gmail.com">napaxiong@gmail.com</a>
         <div className="contact-links">
           <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
           <a href="https://www.behance.net" target="_blank" rel="noreferrer">Behance</a>

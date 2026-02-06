@@ -1,4 +1,13 @@
+import { Link } from 'react-router-dom'
+
 export default function HomeSection() {
+  const handleContactScroll = () => {
+    const target = document.getElementById('contact')
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
   return (
     <section id="home" className="section hero">
       <div className="hero-content">
@@ -10,8 +19,10 @@ export default function HomeSection() {
           measurable impact.
         </p>
         <div className="hero-actions">
-          <a className="primary-btn" href="#portfolio">View work</a>
-          <a className="ghost-btn" href="#contact">Book a discovery call</a>
+          <Link className="primary-btn" to="/projects">View work</Link>
+          <button className="ghost-btn" type="button" onClick={handleContactScroll}>
+            Book a discovery call
+          </button>
         </div>
       </div>
       <div className="hero-card">

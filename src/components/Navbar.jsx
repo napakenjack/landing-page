@@ -1,15 +1,32 @@
+import { Link, useLocation, useNavigate } from 'react-router-dom'
+
 export default function Navbar() {
+  const location = useLocation()
+  const navigate = useNavigate()
+
+  const handleScroll = (sectionId) => () => {
+    if (location.pathname !== '/') {
+      navigate('/', { state: { scrollTo: sectionId } })
+      return
+    }
+
+    const target = document.getElementById(sectionId)
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
   return (
     <nav className="navbar">
-      <div className="nav-brand">Aidar Karim</div>
+      <Link className="nav-brand" to="/">Aidar</Link>
       <ul className="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#portfolio">Projects</a></li>
-        <li><a href="#selfintroduction">About</a></li>
-        <li><a href="#prices">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/projects">Projects</Link></li>
+        <li><button type="button" onClick={handleScroll('selfintroduction')}>About</button></li>
+        <li><button type="button" onClick={handleScroll('prices')}>Services</button></li>
+        <li><button type="button" onClick={handleScroll('contact')}>Contact</button></li>
       </ul>
-      <a className="nav-cta" href="mailto:hello@aidarkarim.dev">Let’s talk</a>
+      <a className="nav-cta" href="mailto:napaxiong@gmail.com">Let’s talk</a>
     </nav>
   );
 }
